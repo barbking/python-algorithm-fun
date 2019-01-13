@@ -65,3 +65,52 @@ print(np.identity(4))
 a = np.array([[1,2],[3,4]])
 b = np.linalg.inv(a)
 print(np.allclose(np.dot(a,b), np.identity(2)))
+
+#permutations (randomly change order in array)
+a = np.array([1,2,3])
+print(np.random.permutation(a))
+
+#obtain all permutations in a dataset
+from itertools import permutations
+for p in permutations(a):
+    print(p)
+
+#obatin parts of a dataset
+from itertools import combinations
+a = np.array([1,2,3,4])
+for comb in combinations(a,2):
+    print(comb)
+
+#random subset
+import random
+pool = []
+for comb in combinations(a,2):
+    pool.append(comb)
+
+print('pool:',pool)
+print('pool sample:',random.sample(pool,3))
+
+#remove repetitions so algorithm output not skewed
+a = np.array([1,2,3,4,5,6,6,7,7,1,2,3])
+b = np.array(list(set(a)))
+print(b)
+
+#recursion
+def factorial(n):
+    print('factorial called with n=',str(n))
+    if n==1 or n==0:
+        # print("Ending condition met.")
+        return 1
+    else:
+        # print(n*factorial(n-1))
+        return n * factorial(n-1)
+print("version 1:",factorial(5))
+
+def factorialTwo(n):
+    if n > 1:
+        return n * factorial(n-1)
+    return 1
+print("version 2:",factorialTwo(5))
+
+
+
