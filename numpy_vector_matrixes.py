@@ -102,7 +102,7 @@ def factorial(n):
         # print("Ending condition met.")
         return 1
     else:
-        # print(n*factorial(n-1))
+        #tail call
         return n * factorial(n-1)
 print("version 1:",factorial(5))
 
@@ -111,6 +111,19 @@ def factorialTwo(n):
         return n * factorial(n-1)
     return 1
 print("version 2:",factorialTwo(5))
+
+#iteration instead of recursion (improve memory usage)
+#eliminate tail call
+def factorialThree(n):
+    result = 1
+    while n > 1:
+        result = result * n
+        n = n - 1
+        print("Current value of n is ", str(n))
+    print("ending condition met. ")
+    return result
+
+print(factorialThree(5))   
 
 
 
