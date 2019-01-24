@@ -3,7 +3,7 @@
 # - ensure datasets place same meaning on data elements (eg date formats, 32-bit vs 16-bit integer)
 # - verify data attributes
 # - more time spent verifying compatibility of datae from each source, less likely to encounter problems working with data,
-#   sometime results may look correct but provide misleading information
+#   sometime results may look correct but actually provide misleading information
 
 # Remediation - dealing with data duplication
 import pandas as pd
@@ -21,6 +21,7 @@ df = pd.DataFrame({ 'A': [0,0,1,None],
                     'C': [np.NAN,3,4,1]},
                     dtype=int)
 print(df, "\n")
+# mean for each serarate column
 values = pd.Series(df.mean(), dtype=int)
 print(values, "\n")
 # fillna gets rid of missing values such as None or NAN
