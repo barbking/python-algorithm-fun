@@ -34,3 +34,21 @@ Pop()
 Pop()
 Pop()
 
+# Queues (FI/FO)
+# like stacks can find predefined implementation in many pkgs such
+# as NumPy and Pandas, also defined Python
+import queue
+MyQueue = queue.Queue(3)
+print("Queue empty: ", MyQueue.empty())
+MyQueue.put(1)
+MyQueue.put(2)
+MyQueue.put(3)
+print("MyQueue: ", MyQueue)
+print("Queue full: ", MyQueue.full())
+print("Popping: ", MyQueue.get())
+print("Queue full: ", MyQueue.full())
+print("Popping: ", MyQueue.get())
+print("Popping: ", MyQueue.get())
+print("Queue empty: ", MyQueue.empty())
+
+
