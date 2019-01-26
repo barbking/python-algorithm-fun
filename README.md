@@ -10,3 +10,6 @@
 
 ### Ch 5 Performing Essential Data Manipulations Using Python
 
+### Ch 6 Structuring Data
+
+
